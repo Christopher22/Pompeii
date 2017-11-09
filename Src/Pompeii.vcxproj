@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A63A081C-F174-43A2-803D-AEE64AB9986C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Framework</RootNamespace>
+    <ProjectName>Pompeii</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Dependencies\SDL2-2.0.5\include\;$(SolutionDir)\Dependencies\SDL2_image-2.0.1\include;$(SolutionDir)\Dependencies\LUA-5.3.4_win32\include\;$(SolutionDir)\Dependencies\FMOD-1.09.06\inc\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\LUA-5.3.4_win32\;$(SolutionDir)\Dependencies\SDL2-2.0.5\lib\x86;$(SolutionDir)\Dependencies\SDL2_image-2.0.1\lib\x86;$(SolutionDir)\Dependencies\FMOD-1.09.06\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;lua53.lib;fmodl_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Dependencies\SDL2-2.0.5\include\;$(SolutionDir)\Dependencies\SDL2_image-2.0.1\include;$(SolutionDir)\Dependencies\LUA-5.3.4_win32\include\;$(SolutionDir)\Dependencies\FMOD-1.09.06\inc\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;lua53.lib;fmodl_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Dependencies\LUA-5.3.4_win32\;$(SolutionDir)\Dependencies\SDL2-2.0.5\lib\x86;$(SolutionDir)\Dependencies\SDL2_image-2.0.1\lib\x86;$(SolutionDir)\Dependencies\FMOD-1.09.06\lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\backbuffer.h" />
+    <ClInclude Include="Engine\entity.h" />
+    <ClInclude Include="Engine\game.h" />
+    <ClInclude Include="Engine\inputhandler.h" />
+    <ClInclude Include="Engine\logmanager.h" />
+    <ClInclude Include="Engine\particle.h" />
+    <ClInclude Include="Engine\particleemitter.h" />
+    <ClInclude Include="Stages\aboutmenu.h" />
+    <ClInclude Include="Stages\Helper\ashparticles.h" />
+    <ClInclude Include="Stages\Helper\fire.h" />
+    <ClInclude Include="Stages\Helper\font.h" />
+    <ClInclude Include="Stages\Helper\label.h" />
+    <ClInclude Include="Stages\mapmenu.h" />
+    <ClInclude Include="Stages\match.h" />
+    <ClInclude Include="Stages\menu.h" />
+    <ClInclude Include="Stages\stage.h" />
+    <ClInclude Include="Stages\startmenu.h" />
+    <ClInclude Include="Stages\resultmenu.h" />
+    <ClInclude Include="Stages\tutorialmenu.h" />
+    <ClInclude Include="World\coordinate.h" />
+    <ClInclude Include="World\luafile.h" />
+    <ClInclude Include="World\map.h" />
+    <ClInclude Include="World\tilemanager.h" />
+    <ClInclude Include="World\types.h" />
+    <ClInclude Include="pompeii.h" />
+    <ClInclude Include="Engine\sprite.h" />
+    <ClInclude Include="Engine\texture.h" />
+    <ClInclude Include="Engine\texturemanager.h" />
+    <ClInclude Include="World\tile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\backbuffer.cpp" />
+    <ClCompile Include="Engine\entity.cpp" />
+    <ClCompile Include="Engine\game.cpp" />
+    <ClCompile Include="Engine\inputhandler.cpp" />
+    <ClCompile Include="Engine\logmanager.cpp" />
+    <ClCompile Include="Engine\particle.cpp" />
+    <ClCompile Include="Engine\particleemitter.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Stages\aboutmenu.cpp" />
+    <ClCompile Include="Stages\Helper\ashparticles.cpp" />
+    <ClCompile Include="Stages\Helper\fire.cpp" />
+    <ClCompile Include="Stages\Helper\font.cpp" />
+    <ClCompile Include="Stages\Helper\label.cpp" />
+    <ClCompile Include="Stages\mapmenu.cpp" />
+    <ClCompile Include="Stages\match.cpp" />
+    <ClCompile Include="Stages\menu.cpp" />
+    <ClCompile Include="Stages\stage.cpp" />
+    <ClCompile Include="Stages\startmenu.cpp" />
+    <ClCompile Include="Stages\resultmenu.cpp" />
+    <ClCompile Include="Stages\tutorialmenu.cpp" />
+    <ClCompile Include="World\coordinate.cpp" />
+    <ClCompile Include="World\luafile.cpp" />
+    <ClCompile Include="pompeii.cpp" />
+    <ClCompile Include="Engine\sprite.cpp" />
+    <ClCompile Include="Engine\texture.cpp" />
+    <ClCompile Include="Engine\texturemanager.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
